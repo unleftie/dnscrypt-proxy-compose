@@ -24,6 +24,7 @@ services:
       # - "./dnscrypt-proxy-ipv4-only.toml:/config/dnscrypt-proxy.toml:ro"
       - "./dnscrypt-proxy.toml:/config/dnscrypt-proxy.toml:ro"
     restart: unless-stopped
+    mem_limit: 512M
     healthcheck:
       test: ["CMD", "dnsprobe", "google.com", "127.0.0.1:53"]
       interval: 720s
